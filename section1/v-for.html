@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script><!-- 1 -->
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(member, index) in members">
+                {{ index }} :  {{ member }}
+            </li>
+        </ul>
+
+        <br>
+
+        <ul>
+            <li v-for="(value, key, index) in book">
+                {{ index }} : {{ key }} : {{ value }}
+            </li>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>タイトル</th>
+                    <th>著者</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in books" :key="item.id">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.author }}</td>
+                    <td>{{ item.url }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+</body>
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: function(){
+            return{
+                members: ['A','B','C','D'],
+                book: {
+                title: '本のタイトル',
+                author: '本の著者',
+                url: 'https://google.com'
+                },
+                books: [
+                    {
+                        id:1,
+                        title: '本のタイトル1',
+                        author: '本の著者1',
+                        url: 'https://google.com'
+                    },{
+                        id:2,
+                        title: '本のタイトル2',
+                        author: '本の著者2',
+                        url: 'https://google.com'
+                    },{
+                        id:3,
+                        title: '本のタイトル3',
+                        author: '本の著者3',
+                        url: 'https://google.com'
+                    }
+                ]
+            }
+        }
+    })
+</script>
+</html>

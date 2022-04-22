@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+
+
+    <div id="app">
+        {{ message }}
+        <a v-bind:href="google">googleへのリンク</a>
+        <a :href="google">googleへのリンク</a>
+        <br>
+        <a v-bind:href="book.url">{{book.title}}</a>
+        <input v-bind="{name:forminput.name, placeholder:forminput.placeholder}">
+        <input v-bind="forminput"><!-- タグの属性が一致しているのみ -->
+    </div>
+</body>
+<script>
+let app = new Vue({
+    el: '#app',
+    data: function(){ // 初期設定
+        return {
+            message: 'good buy',
+            google: 'https://google.com',
+            book: {
+                title: '本のタイトル',
+                url: 'https://google.com'
+            },
+            forminput:{
+                name: 'your_name',
+                placeholder: 'お名前を入力'
+
+            }
+        }
+    }
+})
+
+
+const googleLink = document.getElementById()
+
+//const html = document.querySelector('html');
+//console.dir(html);
+//console.dir(app);
+
+</script>
+</html>
